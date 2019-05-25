@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular7-to-do-list';
+  name: string = 'The To Do List';
+  total: number = 6 + 8
+
+  constructor() {
+    console.log(this.name)
+    console.log(123)
+    this.changeName("Mosheh EliYahu")
+    console.log(this.name)
+  }
+
+  changeName(name: string): void {
+    this.name = name
+  }
 }
