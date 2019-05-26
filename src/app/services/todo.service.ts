@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TodoService {
-
+  
   todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
   todosLimit: string = '?_limit=5';
 
@@ -35,5 +35,9 @@ export class TodoService {
   deleteTodo(todo: Todo): Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
     return this.http.delete<Todo>(url, httpOptions);
+  }
+
+  addTodo(todo: any): Observable<Todo> {
+    return this.http.post<any>(this.todosUrl, todo, httpOptions)
   }
 }

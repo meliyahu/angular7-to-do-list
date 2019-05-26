@@ -33,5 +33,10 @@ export class ToDosComponent implements OnInit {
     this.todoService.deleteTodo(todo).subscribe();
 
   }
-
+  addTodo(todo: any) {
+    console.log("Todo Added:", todo);
+    this.todoService.addTodo(todo).subscribe(t => {
+      this.todos.push(t)
+    })
+  }
 }
